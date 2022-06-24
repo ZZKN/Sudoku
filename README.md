@@ -1,21 +1,13 @@
 ## Sudoku solver in Prolog
 
-Na vstupu dostane hrací desku s libovolným počtem předvyplněných buněk. Úkolem je vyplnit Sudoku, pokud řešení existuje.
-
-Minimální požadavky:
-Načíst a interně zareprezentovat sudoku.
-Najít alespoň jedno řešení (existuje-li) libovolně zadaného sudoku 9x9.
-
-Extra body: Velikost hrací desky není omezená {n^2 * n^2| n≥1}. 
-
-## Example usage
+Na vstupu dostane hrací desku s libovolným počtem předvyplněných buněk. Úkolem je vyplnit Sudoku, pokud řešení existuje. Velikost hrací desky není omezená {n^2 * n^2| n≥1}. 
 
 ### Reprezentácia Sudoku
 Sudoku je možné zadať ako zoznam zoznamov, ktoré reprezentujú riadky v sudoku.
 Interne je sudoku reprezentované ako zoznam zoznamov, ktorý je abstraktne rozdelený do troch častí: zoznamy reprezentujúce riadky, stĺpce a štvorce.
 
 ### Riešenie Sudoku
-Sudoku solver je schopný riešiť ľubovoľné sudoku korektnej veľkosti ale počet nevyplnených hodnôt odzrkadľuje dĺžku behu programu práve kvôli brute froce spôsobu hľadania vyplnenia sudoku.
+Solver je schopný riešiť ľubovoľné sudoku korektnej veľkosti ale počet nevyplnených hodnôt odzrkadľuje dĺžku behu programu práve kvôli brute froce spôsobu hľadania vyplnenia sudoku.
 Program postupne nájde správne riešenie každej "oblasti" (riadok, stĺpec, štvorec), zlyhá ak neexistuje riešenie pre nejakú oblasť. 
 Riešenie v jednej oblasti hľadá rekurzívnym vyplnením každej cell, ktorá ešte nemá hodnotu bez porušenia pravidiel. 
 
